@@ -1,0 +1,230 @@
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\Dictionary.baml
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\Organization.baml
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\RunData.baml
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\TaskManager.baml
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\MainWindow.g.cs
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\App.g.cs
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\ACS_MarkupCompile.cache
+C:\Users\think\Desktop\HuaHeng.Project.Model_XNAGV\ACS\obj\Debug\ACS_MarkupCompile.lref
+C:\Users\think\Desktop\ACS\ACS\bin\Debug\ACS.exe.config
+C:\Users\think\Desktop\ACS\ACS\bin\Debug\ACS.exe
+C:\Users\think\Desktop\ACS\ACS\bin\Debug\ACS.pdb
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\Dictionary.baml
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\Organization.baml
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\RunData.baml
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\TaskManager.baml
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\MainWindow.g.cs
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\App.g.cs
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\App.baml
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\MainWindow.baml
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS.g.resources
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS.csproj.CoreCompileInputs.cache
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS.exe
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS.pdb
+C:\Users\think\Desktop\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+C:\Users\think\Desktop\ACS工作\ACS\ACS\bin\Debug\ACS.exe.config
+C:\Users\think\Desktop\ACS工作\ACS\ACS\bin\Debug\ACS.exe
+C:\Users\think\Desktop\ACS工作\ACS\ACS\bin\Debug\ACS.pdb
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\Dictionary.baml
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\Organization.baml
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\RunData.baml
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\TaskManager.baml
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\MainWindow.g.cs
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\App.g.cs
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\App.baml
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\MainWindow.baml
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS.g.resources
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS.csproj.CoreCompileInputs.cache
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS.exe
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS.pdb
+C:\Users\think\Desktop\ACS工作\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+D:\华恒项目\ACS集合\ACS\ACS\bin\Debug\ACS.exe.config
+D:\华恒项目\ACS集合\ACS\ACS\bin\Debug\ACS.exe
+D:\华恒项目\ACS集合\ACS\ACS\bin\Debug\ACS.pdb
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\Dictionary.baml
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\Organization.baml
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\RunData.baml
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\TaskManager.baml
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\MainWindow.g.cs
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\App.g.cs
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\App.baml
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\MainWindow.baml
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\ACS.g.resources
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\ACS.exe
+D:\华恒项目\ACS集合\ACS\ACS\obj\Debug\ACS.pdb
+D:\新宁小车上位机系统\ACS\ACS\bin\Debug\ACS.exe
+D:\新宁小车上位机系统\ACS\ACS\bin\Debug\ACS.exe.config
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\Dictionary.baml
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\Organization.baml
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\RunData.baml
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\TaskManager.baml
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\MainWindow.g.cs
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\App.g.cs
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\App.baml
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\MainWindow.baml
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\ACS.g.resources
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\ACS.exe
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\ACS.pdb
+D:\新宁小车上位机系统\ACS\ACS\bin\Debug\ACS.pdb
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\bin\Debug\ACS.exe.config
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\bin\Debug\ACS.exe
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\bin\Debug\ACS.pdb
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\Dictionary.baml
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\Organization.baml
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\RunData.baml
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\TaskManager.baml
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\MainWindow.g.cs
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\App.g.cs
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\App.baml
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\MainWindow.baml
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS.g.resources
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS.csproj.CoreCompileInputs.cache
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS.exe
+D:\HuaHeng Project\HH_AGVWCS\code\ACS\ACS\obj\Debug\ACS.pdb
+D:\新宁小车上位机系统\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\bin\Debug\ACS.exe.config
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\bin\Debug\ACS.exe
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\bin\Debug\ACS.pdb
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\Dictionary.baml
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\Organization.baml
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\RunData.baml
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\TaskManager.baml
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\MainWindow.g.cs
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\App.g.cs
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\App.baml
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\MainWindow.baml
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS.g.resources
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS.csproj.CoreCompileInputs.cache
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS.exe
+C:\Users\think\Desktop\转移 ----- 桌面\ACS工作\ACS\ACS\obj\Debug\ACS.pdb
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\bin\Debug\ACS.exe.config
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\ACS.exe
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\ACS.pdb
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\bin\Debug\ACS.exe
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\bin\Debug\ACS.pdb
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\Dictionary.baml
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\Organization.baml
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\RunData.baml
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\TaskManager.baml
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\MainWindow.g.cs
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\App.g.cs
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\App.baml
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\MainWindow.baml
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\ACS.g.resources
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+D:\agv\程序\新宁ACS流程测试V4.0版本\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+D:\ACS\ACS\bin\Debug\ACS.exe.config
+D:\ACS\ACS\obj\Debug\ACS.exe
+D:\ACS\ACS\obj\Debug\ACS.pdb
+D:\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
+D:\ACS\ACS\obj\Debug\Dictionary.baml
+D:\ACS\ACS\obj\Debug\Task.baml
+D:\ACS\ACS\obj\Debug\MainWindow.g.cs
+D:\ACS\ACS\obj\Debug\Task.g.cs
+D:\ACS\ACS\obj\Debug\App.g.cs
+D:\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+D:\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+D:\ACS\ACS\bin\Debug\ACS.exe
+D:\ACS\ACS\bin\Debug\ACS.pdb
+D:\ACS\ACS\obj\Debug\App.baml
+D:\ACS\ACS\obj\Debug\MainWindow.baml
+D:\ACS\ACS\obj\Debug\ACS.g.resources
+D:\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+D:\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\ACS.exe.config
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\ACS.exe
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\ACS.pdb
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\ACS.exe
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\ACS.pdb
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\Dictionary.baml
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\Task.baml
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\MainWindow.g.cs
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\Task.g.cs
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\App.g.cs
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\App.baml
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\MainWindow.baml
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\ACS.g.resources
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+C:\Users\0322\Desktop\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\de\Microsoft.Expression.Drawing.resources.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\es\Microsoft.Expression.Drawing.resources.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\fr\Microsoft.Expression.Drawing.resources.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\it\Microsoft.Expression.Drawing.resources.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\ja\Microsoft.Expression.Drawing.resources.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\ko\Microsoft.Expression.Drawing.resources.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\ru\Microsoft.Expression.Drawing.resources.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\zh-Hans\Microsoft.Expression.Drawing.resources.dll
+C:\Users\0322\Desktop\ACS\ACS\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\ACS.exe.config
+D:\learn\ACSTool\ACS\ACS\obj\Debug\ACS.exe
+D:\learn\ACSTool\ACS\ACS\obj\Debug\ACS.pdb
+D:\learn\ACSTool\ACS\ACS\obj\Debug\Dictionary.baml
+D:\learn\ACSTool\ACS\ACS\obj\Debug\Task.baml
+D:\learn\ACSTool\ACS\ACS\obj\Debug\MainWindow.g.cs
+D:\learn\ACSTool\ACS\ACS\obj\Debug\Task.g.cs
+D:\learn\ACSTool\ACS\ACS\obj\Debug\App.g.cs
+D:\learn\ACSTool\ACS\ACS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\learn\ACSTool\ACS\ACS\obj\Debug\ACS_MarkupCompile.cache
+D:\learn\ACSTool\ACS\ACS\obj\Debug\ACS_MarkupCompile.lref
+D:\learn\ACSTool\ACS\ACS\bin\Debug\ACS.exe
+D:\learn\ACSTool\ACS\ACS\bin\Debug\ACS.pdb
+D:\learn\ACSTool\ACS\ACS\bin\Debug\Microsoft.Expression.Drawing.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\de\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\es\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\fr\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\it\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\ja\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\ko\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\ru\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\zh-Hans\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
+D:\learn\ACSTool\ACS\ACS\obj\Debug\App.baml
+D:\learn\ACSTool\ACS\ACS\obj\Debug\MainWindow.baml
+D:\learn\ACSTool\ACS\ACS\obj\Debug\ACS.g.resources
+D:\learn\ACSTool\ACS\ACS\obj\Debug\ACS.Properties.Resources.resources
+D:\learn\ACSTool\ACS\ACS\obj\Debug\ACS.csproj.GenerateResource.Cache
+D:\learn\ACSTool\ACS\ACS\obj\Debug\ACS.csprojResolveAssemblyReference.cache
