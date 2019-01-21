@@ -15,11 +15,11 @@ from fake_useragent.fake import UserAgent
 class BaiDuTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        ua=UserAgent().random
-        cls.headers={"User-Agent":ua}
+        #ua=UserAgent().random
+        #cls.headers={"User-Agent":ua}
         cls.wb=webdriver.Chrome()
         cls.wb.maximize_window()
-        cls.wb.implicitly_wait(5)
+        #cls.wb.implicitly_wait(5)#会在整个测试周期中寻找每个元素时都起作用，会增加测试执行时间
         '''隐式等待和显示等待都存在时，超时时间取二者中较大的'''
         cls.wb.get("https://www.baidu.com")
 
