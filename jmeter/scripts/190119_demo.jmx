@@ -208,7 +208,7 @@
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="true">
+              <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion" enabled="false">
                 <longProp name="html_assertion_error_threshold">100</longProp>
                 <longProp name="html_assertion_warning_threshold">0</longProp>
                 <stringProp name="html_assertion_doctype">auto</stringProp>

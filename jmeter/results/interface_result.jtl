@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1548127124965,23,HTTP请求,200,OK,线程组 1-2,text,true,,1637,561,2,2,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,23,0,11
+1548127125064,30,HTTP请求,200,OK,线程组 1-3,text,true,,1637,561,2,2,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,30,0,14
+1548127125164,26,HTTP请求,200,OK,线程组 1-4,text,true,,1637,561,2,2,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,26,0,12
+1548127125263,26,HTTP请求,200,OK,线程组 1-5,text,true,,1637,561,2,2,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,26,0,12
+1548127125364,25,HTTP请求,200,OK,线程组 1-6,text,true,,1637,561,2,2,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,25,0,11
+1548127124862,542,HTTP请求,200,OK,线程组 1-1,text,true,,1637,561,1,1,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,532,0,12
+1548127125464,22,HTTP请求,200,OK,线程组 1-7,text,true,,1637,561,1,1,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,22,0,10
+1548127125564,25,HTTP请求,200,OK,线程组 1-8,text,true,,1637,561,1,1,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,25,0,12
+1548127125665,25,HTTP请求,200,OK,线程组 1-9,text,true,,1637,561,1,1,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,25,0,11
+1548127125765,24,HTTP请求,200,OK,线程组 1-10,text,true,,1637,561,1,1,http://ws.webxml.com.cn/WebServices/WeatherWS.asmx,24,0,11

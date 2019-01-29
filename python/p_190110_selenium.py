@@ -1,6 +1,6 @@
 from selenium import webdriver
 import unittest
-import time 
+import time
 
 class BaiDuTestCase(unittest.TestCase):
     def setUp(self):
