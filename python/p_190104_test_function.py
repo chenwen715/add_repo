@@ -31,18 +31,17 @@ class TestWhichDay(unittest.TestCase):
         for i in self.ndata:
             with self.subTest(i=i):
                 self.assertEqual(i["output"],whichDay(i["input"]))
-                
-    @ddt.data(*ndata)           
+
+    @ddt.data(*ndata)
     def test_normalcase_1(self,value):
         '''使用ddt测试多条正常数据'''
         self.assertEqual(value["output"],whichDay(value["input"]))
-        
-    @ddt.data(*indata)           
+
+    @ddt.data(*indata)
     def test_innormalcase(self,value):
         '''使用ddt测试多条非正常数据'''
         self.assertRaises(value["output"],whichDay,value["input"])
-    
+
 
 if __name__=="__main__":
     unittest.main()
-    
