@@ -14,9 +14,13 @@ namespace statistics
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, List<Dictionary<string, List<task>>>> allgroup = new Dictionary<string, List<Dictionary<string, List<task>>>>();
-        List<task> allManagedTasks = new List<task>();
+        //Dictionary<string, List<Dictionary<string, List<task>>>> allgroup = new Dictionary<string, List<Dictionary<string, List<task>>>>();
+        //List<task> allManagedTasks = new List<task>();
         DAL_Comn_Excel ce = new DAL_Comn_Excel();
+        List<task> allData = new List<task>();//所有原始任务
+        int j = 1;//行数
+        int number = 0;//指定小车任务数
+        string agv = "";
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +29,7 @@ namespace statistics
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            richTextBox1.Text = "";
+
         }
 
         #region
@@ -189,13 +193,12 @@ namespace statistics
         #endregion
 
         /// <summary>
-        /// 读取excel数据
+        /// 读取源数据
         /// </summary>
         /// <returns></returns>
-        private List<task> getExcelData()
+        private void getExcelData()
         {
             Microsoft.Office.Interop.Excel.Workbook wb;
-            List<task> allData = new List<task>();
             try
             {
                 if (string.IsNullOrEmpty(textBox1.Text))
@@ -230,7 +233,7 @@ namespace statistics
                     }
                 }
                 ce.Close();
-                return allData;
+                //return allData;
              }
             catch (Exception ex)
             {
@@ -242,36 +245,39 @@ namespace statistics
         }
 
         /// <summary>
-        /// 将内存数据写入excel
+        /// 将处理后的数据写入excel
         /// </summary>
-        /// <param name="allgroup"></param>
-        private void writeDataToExcel(Dictionary<string, List<Dictionary<string, List<task>>>> allgroup)
+        /// <param name="allManagedTasks"></param>
+        private void writeDataToExcel(List<task> allManagedTasks)
         {
             Microsoft.Office.Interop.Excel.Workbook wb;
+            Microsoft.Office.Interop.Excel.Worksheet ws;
             try
             {
                 wb = ce.Open(textBox1.Text);
-                string newSheetName = "基础数据";
-                Microsoft.Office.Interop.Excel.Worksheet ws = ce.AddSheet(newSheetName);
-                string[] title={"任务类型","货架号","站台","建立时间","小车号","开始时间","结束时间" ,"enable",
-                    "单条任务时间","充电所用时间","充电任务消耗总时间","货架任务间隔时间","货架任务总时间","货架任务时间","货架在工作台等待时间","建立回库路径时间"};
-                ce.SetCellColor(ws,1 ,8, 9,Color.Green);
-                for(int i =0;i<title.Length;i++)
+                string newSheetName = "数据";
+                if (ce.sheetIsExists(newSheetName))
                 {
-                    ce.SetCellValue(ws,1,i+1,title[i]);
+                    ws = ce.GetSheet(newSheetName);                  
                 }
-                int j=2;
-
-                allgroup=tjaData(allgroup);
-                getAllManagedData(allgroup);
-                tjsData(allManagedTasks);
+                else
+                {
+                    ws = ce.AddSheet(newSheetName);
+                }            
+                if (j == 1)
+                {
+                    string[] title ={"任务类型","货架号","站台","建立时间","小车号","开始时间","结束时间" ,"enable",
+                    "单条任务时间","充电所用时间","充电任务消耗总时间","货架任务间隔时间","货架任务总时间","货架任务时间","货架在工作台等待时间","建立回库路径时间"};
+                    for (int i = 0; i < title.Length; i++)
+                    {
+                        ce.SetCellValue(ws, 1, i + 1, title[i]);
+                    }
+                    j++;
+                }
+               
+                //int j=2;
                 foreach (task ttl in allManagedTasks.OrderBy(a => a.agvNo).ThenBy(b => b.startTime))
                 {
-                    if (ttl.possibleError)
-                    {
-                        //ce.SetCellValue(ws, j, 17, Convert.ToByte(ttl.possibleError));
-                        ce.SetCellColor(ws, j, 1,title.Length, Color.Red);
-                    }
                     ce.SetCellValue(ws, j, 1, ttl.taskType);
                     ce.SetCellValue(ws, j, 2, ttl.shelfNo);
                     ce.SetCellValue(ws, j, 3, ttl.stationNo);
@@ -289,7 +295,7 @@ namespace statistics
                         ce.SetCellValue(ws, j, 10, ttl.chargePeriod.ToString());
                         ce.SetCellValue(ws, j, 11, ttl.chargeTotalTime.ToString());
                     }
-                    if (ttl.intervalTime.ToString() != "23:59:59")
+                    if (ttl.intervalTime.ToString() != "00:00:00")
                     {
                         ce.SetCellValue(ws, j, 12, ttl.intervalTime.ToString());
                     }
@@ -302,8 +308,7 @@ namespace statistics
                     }                   
                     j++;
                 }
-                
-                
+                //allData.RemoveAll(a => a.agvNo == agv);
                 ce.Save();
                 ce.Close();
             }
@@ -312,169 +317,37 @@ namespace statistics
                 ce.Close();
                 throw new Exception(ex.ToString());
             }
-            finally
-            {
-                button1.Enabled = true;
-                textBox1.Text = "";
-                richTextBox1.Text += DateTime.Now.ToString()+"\t完成\n";
-                
-            }
+            //finally
+            //{
+            //    button1.Enabled = true;
+            //    textBox1.Text = "";
+            //    label1.Text = "完成";
+            //}
         }
 
-        /// <summary>
-        /// 统计小车任务数
-        /// </summary>
-        /// <param name="allManagedTasks"></param>
-        private Dictionary<string, List<Dictionary<string, List<task>>>> tjaData(Dictionary<string, List<Dictionary<string, List<task>>>> allgroup)
+        private void groupByAgvNo(List<task> allData)
         {
-            string newSheetName = "小车统计信息";
-            Microsoft.Office.Interop.Excel.Worksheet ws = ce.AddSheet(newSheetName);
-            string[] title = { "小车号", "总任务数", "出入库任务数", "充电任务数", "平均充电时间", "平均充电任务消耗时间","入库比出库耗时长任务数", "用于计算任务间隔的任务数", "平均任务衔接时间", "最大任务衔接时间", "最小任务衔接时间" };
-            for (int i = 0; i < title.Length; i++)
+            while (allData.Count != 0)
             {
-                ce.SetCellValue(ws, 1, i + 1, title[i]);
+                agv = allData[0].agvNo;
+                List<task> onegroup = allData.FindAll(a => a.agvNo == agv);
+                number = onegroup.Count;
+                groupdata(onegroup);
+                allData.RemoveAll(a => a.agvNo == agv);
             }
-            int allchargetasks = 0;
-            double allchargetimes = 0;
-            double allchargetaskstimes = 0;
-            int allshelftasks = 0;
-            double allshelfintervaltimes = 0;
-            int ii = 2;
-            foreach (KeyValuePair<string, List<Dictionary<string, List<task>>>> eg in allgroup)
-            {
-                ce.SetCellValue(ws, ii, 1, eg.Key);
-                int totaltasks=0;
-                int totalshelftasks=0;
-                int totalchargetasks=0;
-                int inlargerthanout=0;
-                KeyValuePair<string, List<task>> last_task = new KeyValuePair<string, List<task>>();
-                List<task> interval = new List<task>();//用于计算任务间隔的货架任务数
-                List<task> ct = new List<task>();//用于计算的充电任务数
-                foreach(Dictionary<string, List<task>> ed in eg.Value)
-                {
-                    foreach (KeyValuePair<string, List<task>> et in ed)
-                    {
-                        if(et.Value.Find(a=>a.isEnable)!=null)
-                        {
-                            totaltasks++;
-                            if (et.Key.Contains("charge"))
-                            {
-                                totalchargetasks++;
-                                if (totaltasks!=1&& last_task.Key.Contains("charge"))
-                                {
-                                    foreach (task t in et.Value)
-                                    {
-                                        t.possibleError = true;
-                                    }
-                                }
-                                ct.Add(et.Value.Find(a => a.taskType == 5));
-                            }
-                            else if(et.Key.Contains("shelf"))
-                            {
-                                totalshelftasks++;
-                                if (totaltasks!=1&&last_task.Key.Contains("shelf"))//连续的2次货架任务有效，若中间有充电任务则不用于统计
-                                {
-                                    interval.Add(et.Value.Find(a => a.taskType == 8 && a.intervalTime.ToString() != "23:59:59"));
-                                }
-                                if(et.Value.Find(a=>a.taskType==8).singleTaskTime<et.Value.Find(a=>a.taskType==9).singleTaskTime)
-                                {
-                                    inlargerthanout++;
-                                }
-                            }
-                        }
-                        last_task = et;
-                    }
-                }
-
-                ce.SetCellValue(ws, ii, 2, totaltasks);
-                ce.SetCellValue(ws, ii, 3, totalshelftasks);
-                ce.SetCellValue(ws, ii, 4, totalchargetasks);
-                if (totalchargetasks!=0)
-                {
-                    ce.SetCellValue(ws, ii, 5, convertTime(ct.Average(a => a.chargePeriod.TotalSeconds)));
-                    ce.SetCellValue(ws, ii, 6, convertTime(ct.Average(a => a.chargeTotalTime.TotalSeconds)));
-                    allchargetasks += totalchargetasks;
-                    allchargetimes += ct.Sum(a => a.chargePeriod.TotalSeconds);
-                    allchargetaskstimes += ct.Sum(a => a.chargeTotalTime.TotalSeconds);
-                }
-                if (totalshelftasks > 0)
-                {
-                    ce.SetCellValue(ws, ii, 7, inlargerthanout);
-                    ce.SetCellValue(ws, ii, 8, interval.Count);
-                    ce.SetCellValue(ws, ii, 9, convertTime(interval.Average(a => a.intervalTime.TotalSeconds)));
-                    ce.SetCellValue(ws, ii, 10, interval.Max(a => a.intervalTime).ToString());
-                    ce.SetCellValue(ws, ii, 11, interval.Min(a => a.intervalTime).ToString());
-                    allshelftasks += interval.Count;
-                    allshelfintervaltimes += interval.Sum(a => a.intervalTime.TotalSeconds);
-                }                
-                ii++;
-            }
-            ce.SetCellValue(ws, ii, 1, "平均");
-            ce.SetCellValue(ws, ii, 5, convertTime(allchargetimes / allchargetasks));
-            ce.SetCellValue(ws, ii, 6, convertTime(allchargetaskstimes / allchargetasks));
-            ce.SetCellValue(ws, ii, 9, convertTime(allshelfintervaltimes / allshelftasks));
-            return allgroup;
-
-        }
-        /// <summary>
-        /// 统计货架任务信息
-        /// </summary>
-        /// <param name="allManagedTasks"></param>
-        private void tjsData(List<task> allManagedTasks)
-        {
-            string newSheetName = "货架任务统计";
-            Microsoft.Office.Interop.Excel.Worksheet ws = ce.AddSheet(newSheetName);
-            string[] title ={"货架任务数","平均出库时间","最长出库时间","最短出库时间","平均入库时间","最长入库时间","最短入库时间"
-                                ,"平均货架任务总时间","最长货架任务总时间","最短货架任务总时间","平均货架任务时间","最长货架任务时间","最短货架任务时间"
-                                ,"平均货架在工作台等待时间","最长货架在工作台等待时间","最短货架在工作台等待时间","平均建立回库路径时间",
-                                "最长建立回库路径时间","最短建立回库路径时间"};
-            for (int i = 0; i < title.Length; i++)
-            {
-                ce.SetCellValue(ws, 1, i + 1, title[i]);
-            }
-            List<task> shelftasks = allManagedTasks.FindAll(a => a.shelfTotalTime.ToString() != "00:00:00");
-            ce.SetCellValue(ws, 2, 1, shelftasks.Count);
-            ce.SetCellValue(ws, 2, 2, convertTime(allManagedTasks.FindAll(a=>a.taskType==8&&a.isEnable).Average(a => a.singleTaskTime.TotalSeconds)));
-            ce.SetCellValue(ws, 2, 3, allManagedTasks.FindAll(a=>a.taskType==8&&a.isEnable).Max(a=>a.singleTaskTime).ToString());
-            ce.SetCellValue(ws, 2, 4, allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Min(a => a.singleTaskTime).ToString());
-            ce.SetCellValue(ws, 2, 5, convertTime(allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Average(a => a.singleTaskTime.TotalSeconds)));
-            ce.SetCellValue(ws, 2, 6, allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Max(a => a.singleTaskTime).ToString());
-            ce.SetCellValue(ws, 2, 7, allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Min(a => a.singleTaskTime).ToString());
-            ce.SetCellValue(ws, 2, 8, convertTime(shelftasks.Average(a => a.shelfTotalTime.TotalSeconds)));
-            ce.SetCellValue(ws, 2, 9, shelftasks.Max(a => a.shelfTotalTime).ToString());
-            ce.SetCellValue(ws, 2, 10, shelftasks.Min(a => a.shelfTotalTime).ToString());
-            ce.SetCellValue(ws, 2, 11, convertTime(shelftasks.Average(a => a.shelfWorkTime.TotalSeconds)));
-            ce.SetCellValue(ws, 2, 12, shelftasks.Max(a => a.shelfWorkTime).ToString());
-            ce.SetCellValue(ws, 2, 13, shelftasks.Min(a => a.shelfWorkTime).ToString());
-            ce.SetCellValue(ws, 2, 14, convertTime(shelftasks.Average(a => a.shelfAtStationTime.TotalSeconds)));
-            ce.SetCellValue(ws, 2, 15, shelftasks.Max(a => a.shelfAtStationTime).ToString());
-            ce.SetCellValue(ws, 2, 16, shelftasks.Min(a => a.shelfAtStationTime).ToString());
-            ce.SetCellValue(ws, 2, 17, convertTime(shelftasks.Average(a => a.createPathTime.TotalSeconds)));
-            ce.SetCellValue(ws, 2, 18, shelftasks.Max(a => a.createPathTime).ToString());
-            ce.SetCellValue(ws, 2, 19, shelftasks.Min(a => a.createPathTime).ToString());
-
+            button1.Enabled = true;
+            textBox1.Text = "";
+            label1.Text = "完成";
         }
 
-        /// <summary>
-        /// 将double类型数据转为hh:mm:ss格式的字符串
-        /// </summary>
-        /// <param name="t"></param>
-        /// <returns></returns>
-        private string convertTime(double t)
-        {
-            int h = Convert.ToInt16(Math.Floor(t /3600));
-            int m = Convert.ToInt16(Math.Floor((t-h*3600) / 60));
-            int s = Convert.ToInt16(Math.Round(t - h * 3600 - 60 * m));
-            return h.ToString().PadLeft(2, '0') + ":" + m.ToString().PadLeft(2, '0') + ":" + s.ToString().PadLeft(2, '0');
-
-        }
 
         /// <summary>
-        /// 将所有数据按小车编号分组，格式：{小车号1：[{"chargexx":[task1,task2]},{"shelfxx":[task1,task2,task3]},{"otherxx":[task1]}...],小车号2：[]...}
+        /// 将读取的数据按小车号分组
         /// </summary>
         /// <param name="allData"></param>
         private void groupdata(List<task> allData)
         {
+            Dictionary<string, List<Dictionary<string, List<task>>>> allgroup = new Dictionary<string, List<Dictionary<string, List<task>>>>();
             foreach (IGrouping<string, task> group in allData.GroupBy(a => a.agvNo))
             {
                 //Dictionary<string, List<List<task>>> eachgroup = new Dictionary<string, List<List<task>>>();
@@ -581,18 +454,21 @@ namespace statistics
                 }
                 allgroup.Add(group.Key, eachgroup);
             }
+            allgroup=manageData(allgroup);
+            List<task> amt=getAllManagedData(allgroup);
+            writeDataToExcel(amt);
         }
 
         /// <summary>
-        /// 处理分组后的数据
+        /// 对分组后的数据进行处理，计算时间
         /// </summary>
-        private void manageData()
+        private Dictionary<string, List<Dictionary<string, List<task>>>> manageData(Dictionary<string, List<Dictionary<string, List<task>>>> allgroup)
         {
             foreach (KeyValuePair<string, List<Dictionary<string, List<task>>>> eg in allgroup)
             {
                 int firstshelftask = -1;
                 int lastshelftask = -1;
-                List<task> lastst = new List<task>();//记录上一条任务
+                List<task> lastst = new List<task>();
                 foreach (Dictionary<string, List<task>> ed in eg.Value)
                 {
                     //var dicSort = (from objDic in ed orderby Regex.Match(objDic.Key, @"\d+") select objDic).ToList();
@@ -600,12 +476,10 @@ namespace statistics
 
                     foreach (KeyValuePair<string, List<task>> et in ed)
                     {
-                        //找到第一个货架任务的下标
                         if (firstshelftask == -1 && et.Key.Contains("shelf") && et.Value.Count == 2)
                         {
                             firstshelftask = eg.Value.IndexOf(ed);
                         }
-                        //充电任务计算充电所用时间和充电任务消耗总时间
                         if (et.Key.Contains("charge"))
                         {
                             //只有充电和取消充电，没有回家任务且后续未执行货架出入库的数据无效
@@ -620,12 +494,10 @@ namespace statistics
                             {
                                 et.Value.Find(a => a.taskType == 5).chargePeriod = et.Value.Find(a => a.taskType == 6).startTime - et.Value.Find(a => a.taskType == 5).endTime;
                             }
-                            //只有充电和取消充电任务
                             if (et.Value.FindAll(a => a.isEnable).Count == 2)
                             {
                                 et.Value.Find(a => a.taskType == 5).chargeTotalTime = et.Value.Find(a => a.taskType == 6).endTime - et.Value.Find(a => a.taskType == 5).setupTime;
                             }
-                            //有充电、取消充电和回家任务
                             else if (et.Value.FindAll(a => a.isEnable).Count == 3)
                             {
                                 et.Value.Find(a => a.taskType == 5).chargeTotalTime = et.Value.Find(a => a.taskType == 7).endTime - et.Value.Find(a => a.taskType == 5).setupTime;
@@ -641,8 +513,7 @@ namespace statistics
                                 et.Value.Find(a => a.taskType == 8).createPathTime = et.Value.Find(a => a.taskType == 9).startTime - et.Value.Find(a => a.taskType == 9).setupTime;
                             }
                             int thisshelftask = eg.Value.IndexOf(ed);
-                            //if (thisshelftask != firstshelftask && thisshelftask - lastshelftask==1)//计算连续2次货架任务之间的时间间隔，第一个任务不计算
-                            if (thisshelftask != firstshelftask)//任务是否连续由tjaData方法控制
+                            if(thisshelftask!=firstshelftask)
                             {
                                 et.Value.Find(a => a.taskType == 8).intervalTime = et.Value.Find(a => a.taskType == 8).startTime - lastst.Find(a => a.taskType == 9).endTime;
                             }
@@ -655,10 +526,11 @@ namespace statistics
                     }
                 }
             }
+            return allgroup;
         }
 
         /// <summary>
-        /// 将list转换为dictionary
+        /// 
         /// </summary>
         /// <param name="newtasks"></param>
         /// <param name="i"></param>
@@ -695,15 +567,13 @@ namespace statistics
             return newtasksd;
         }
 
-        /// <summary>
-        /// 将分组数据拆开
-        /// </summary>
-        /// <param name="allgroup"></param>
-        private void getAllManagedData(Dictionary<string, List<Dictionary<string, List<task>>>> allgroup)
+
+        private List<task> getAllManagedData(Dictionary<string, List<Dictionary<string, List<task>>>> allgroup)
         {
+            List<task> allManagedTasks = new List<task>();
             foreach (KeyValuePair<string, List<Dictionary<string, List<task>>>> eg in allgroup)
             {
-                foreach (Dictionary<string, List<task>> ed in eg.Value)
+                foreach(Dictionary<string, List<task>> ed in eg.Value)
                 {
                     foreach (KeyValuePair<string, List<task>> et in ed)
                     {
@@ -714,14 +584,10 @@ namespace statistics
                     }
                 }
             }
-            allManagedTasks.OrderBy(a => a.agvNo).ThenBy(b => b.startTime);          
+            //allManagedTasks.OrderBy(a => a.agvNo).ThenBy(b => b.startTime); 
+            return allManagedTasks;
         }
 
-        /// <summary>
-        /// 选择处理文件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -734,28 +600,32 @@ namespace statistics
             {
                 textBox1.Text = openFileDialog1.FileName;
                 button1.Enabled = false;
-                richTextBox1.Text += DateTime.Now.ToString() + "\t处理 " + textBox1.Text + " 中......\n";
+                label1.Text = "处理 " + textBox1.Text + " 中......";
                 backgroundWorker1.RunWorkerAsync();
             }
         }
 
-        /// <summary>
-        /// 后台处理数据
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             if (!string.IsNullOrEmpty(textBox1.Text) && !button1.Enabled)
             {
                 //label3.Text = "处理Excel数据中";
-                 allgroup = new Dictionary<string, List<Dictionary<string, List<task>>>>();
-                 allManagedTasks = new List<task>();
-                 List<task> all=getExcelData();
-                 groupdata(all);
-                 manageData();
+                 //allgroup = new Dictionary<string, List<Dictionary<string, List<task>>>>();
+                 //allManagedTasks = new List<task>();
+
+                 //List<task> all=getExcelData();
+                 getExcelData();
+                 groupByAgvNo(allData);
+                 //groupdata(all);
+                 //manageData();
                  //getAllManagedData(allgroup);
-                 writeDataToExcel(allgroup);
+                 //writeDataToExcel(allManagedTasks);
+                 allData = new List<task>();
+                 j = 1;//行数
+                 number = 0;//指定小车任务数
+                 agv = "";
+
+
             }
         }
 
