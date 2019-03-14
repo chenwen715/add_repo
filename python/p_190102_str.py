@@ -8,3 +8,4 @@ print(b)
 
 c="hello world"
 print("ll" in c)
+print("what's 2+3=?",2+3)
