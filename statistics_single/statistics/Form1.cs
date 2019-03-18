@@ -641,9 +641,9 @@ namespace statistics
 
             string[] title = { "站台", "货架任务数", "平均停留时间", "平均补车时间", "平均货架任务完成间隔时间" };
             //string[] title1 = { "时间段", "货架任务数", "平均停留时间", "平均补车时间", "平均货架任务完成间隔时间" };
-            //TimeSpan totaladd = new TimeSpan();
-            //TimeSpan totalfinish = new TimeSpan();
-            //int totaltasks = 0;
+            TimeSpan totaladd = new TimeSpan();
+            TimeSpan totalfinish = new TimeSpan();
+            int totaltasks = 0;
             for (int i = 0; i < title.Length; i++)
             {
                 ce.SetCellValue(ws, 1, i + 1, title[i]);
@@ -685,9 +685,9 @@ namespace statistics
                         a1 += eachgroup[i].Find(a => a.taskType == 8).endTime - eachgroup[i - 1].Find(a => a.taskType == 9).startTime;
                         a2 += eachgroup[i].Find(a => a.taskType == 8).endTime - eachgroup[i - 1].Find(a => a.taskType == 8).endTime;
 
-                        //totaltasks += 1;
-                        //totaladd += eachgroup[i].Find(a => a.taskType == 8).endTime - eachgroup[i - 1].Find(a => a.taskType == 9).startTime;
-                        //totalfinish += eachgroup[i].Find(a => a.taskType == 8).endTime - eachgroup[i - 1].Find(a => a.taskType == 8).endTime;
+                        totaltasks += 1;
+                        totaladd += eachgroup[i].Find(a => a.taskType == 8).endTime - eachgroup[i - 1].Find(a => a.taskType == 9).startTime;
+                        totalfinish += eachgroup[i].Find(a => a.taskType == 8).endTime - eachgroup[i - 1].Find(a => a.taskType == 8).endTime;
                     }
                     
                     allManagedTasks.Add(eachgroup[i].Find(a => a.taskType == 8));
@@ -705,6 +705,13 @@ namespace statistics
                 }
                 j++;               
             }
+            ce.SetCellValue(ws, j, 1, "平均");
+            ce.SetCellValue(ws, j, 3, convertTime(allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Average(a => a.shelfAtStationTime.TotalSeconds)));
+            if (totaltasks > 1)
+            {
+                ce.SetCellValue(ws, j, 4, convertTime(totaladd.TotalSeconds / totaltasks));
+                ce.SetCellValue(ws, j, 5, convertTime(totalfinish.TotalSeconds / totaltasks));
+            }          
             //ce.SetCellValue(ws, times, 1, "1");
             //ce.SetCellValue(ws, times, 2, allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Count);
             //ce.SetCellValue(ws, times, 3, convertTime(allManagedTasks.FindAll(a =>a.taskType == 8 && a.isEnable).Average(a => a.shelfAtStationTime.TotalSeconds)));

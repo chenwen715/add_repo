@@ -484,24 +484,33 @@ namespace statistics
             List<task> shelftasks = allManagedTasks.FindAll(a => a.shelfTotalTime.ToString() != "00:00:00");
             ce.SetCellValue(ws, times, 1, shijianduan);
             ce.SetCellValue(ws, times, 2, shelftasks.Count);
-            ce.SetCellValue(ws, times, 3, convertTime(allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Average(a => a.singleTaskTime.TotalSeconds)));
-            ce.SetCellValue(ws, times, 4, allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Max(a => a.singleTaskTime).ToString());
-            ce.SetCellValue(ws, times, 5, allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Min(a => a.singleTaskTime).ToString());
-            ce.SetCellValue(ws, times, 6, convertTime(allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Average(a => a.singleTaskTime.TotalSeconds)));
-            ce.SetCellValue(ws, times, 7, allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Max(a => a.singleTaskTime).ToString());
-            ce.SetCellValue(ws, times, 8, allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Min(a => a.singleTaskTime).ToString());
-            ce.SetCellValue(ws, times, 9, convertTime(shelftasks.Average(a => a.shelfTotalTime.TotalSeconds)));
-            ce.SetCellValue(ws, times, 10, shelftasks.Max(a => a.shelfTotalTime).ToString());
-            ce.SetCellValue(ws, times, 11, shelftasks.Min(a => a.shelfTotalTime).ToString());
-            ce.SetCellValue(ws, times, 12, convertTime(shelftasks.Average(a => a.shelfWorkTime.TotalSeconds)));
-            ce.SetCellValue(ws, times, 13, shelftasks.Max(a => a.shelfWorkTime).ToString());
-            ce.SetCellValue(ws, times, 14, shelftasks.Min(a => a.shelfWorkTime).ToString());
-            ce.SetCellValue(ws, times, 15, convertTime(shelftasks.Average(a => a.shelfAtStationTime.TotalSeconds)));
-            ce.SetCellValue(ws, times, 16, shelftasks.Max(a => a.shelfAtStationTime).ToString());
-            ce.SetCellValue(ws, times, 17, shelftasks.Min(a => a.shelfAtStationTime).ToString());
-            ce.SetCellValue(ws, times, 18, convertTime(shelftasks.Average(a => a.createPathTime.TotalSeconds)));
-            ce.SetCellValue(ws, times, 19, shelftasks.Max(a => a.createPathTime).ToString());
-            ce.SetCellValue(ws, times, 20, shelftasks.Min(a => a.createPathTime).ToString());
+            if (allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Count != 0)
+            {
+                ce.SetCellValue(ws, times, 3, convertTime(allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Average(a => a.singleTaskTime.TotalSeconds)));
+                ce.SetCellValue(ws, times, 4, allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Max(a => a.singleTaskTime).ToString());
+                ce.SetCellValue(ws, times, 5, allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Min(a => a.singleTaskTime).ToString());
+            }
+            if (allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Count != 0)
+            {
+                ce.SetCellValue(ws, times, 6, convertTime(allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Average(a => a.singleTaskTime.TotalSeconds)));
+                ce.SetCellValue(ws, times, 7, allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Max(a => a.singleTaskTime).ToString());
+                ce.SetCellValue(ws, times, 8, allManagedTasks.FindAll(a => a.taskType == 9 && a.isEnable).Min(a => a.singleTaskTime).ToString());
+            }
+            if (shelftasks.Count != 0)
+            {
+                ce.SetCellValue(ws, times, 9, convertTime(shelftasks.Average(a => a.shelfTotalTime.TotalSeconds)));
+                ce.SetCellValue(ws, times, 10, shelftasks.Max(a => a.shelfTotalTime).ToString());
+                ce.SetCellValue(ws, times, 11, shelftasks.Min(a => a.shelfTotalTime).ToString());
+                ce.SetCellValue(ws, times, 12, convertTime(shelftasks.Average(a => a.shelfWorkTime.TotalSeconds)));
+                ce.SetCellValue(ws, times, 13, shelftasks.Max(a => a.shelfWorkTime).ToString());
+                ce.SetCellValue(ws, times, 14, shelftasks.Min(a => a.shelfWorkTime).ToString());
+                ce.SetCellValue(ws, times, 15, convertTime(shelftasks.Average(a => a.shelfAtStationTime.TotalSeconds)));
+                ce.SetCellValue(ws, times, 16, shelftasks.Max(a => a.shelfAtStationTime).ToString());
+                ce.SetCellValue(ws, times, 17, shelftasks.Min(a => a.shelfAtStationTime).ToString());
+                ce.SetCellValue(ws, times, 18, convertTime(shelftasks.Average(a => a.createPathTime.TotalSeconds)));
+                ce.SetCellValue(ws, times, 19, shelftasks.Max(a => a.createPathTime).ToString());
+                ce.SetCellValue(ws, times, 20, shelftasks.Min(a => a.createPathTime).ToString());
+            }            
 
         }
 
@@ -716,7 +725,10 @@ namespace statistics
             }
             ce.SetCellValue(ws, times, 1, shijianduan);
             ce.SetCellValue(ws, times, 2, allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Count);
-            ce.SetCellValue(ws, times, 3, convertTime(allManagedTasks.FindAll(a =>a.taskType == 8 && a.isEnable).Average(a => a.shelfAtStationTime.TotalSeconds)));
+            if (allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Count != 0)
+            {
+                ce.SetCellValue(ws, times, 3, convertTime(allManagedTasks.FindAll(a => a.taskType == 8 && a.isEnable).Average(a => a.shelfAtStationTime.TotalSeconds)));
+            }          
             if (totaltasks > 1)
             {
                 ce.SetCellValue(ws, times, 4, convertTime(totaladd.TotalSeconds / totaltasks));
